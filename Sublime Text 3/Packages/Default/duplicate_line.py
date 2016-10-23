@@ -5,13 +5,13 @@ class DuplicateLineCommand(sublime_plugin.TextCommand):
     def run(self, edit, forward):
         for region in self.view.sel():
             if region.empty():
-                line = self.view.line(region)
+                line = self.view.full_line(region)
                 if forward:
-                    line_contents = '\n' + self.view.substr(line)
-                    self.view.insert(edit, line.end(), line_contents)
-                else:
-                    line_contents = self.view.substr(line) + '\n'
+                    line_contents = self.view.substr(line)
                     self.view.insert(edit, line.begin(), line_contents)
+                else:
+                    line_contents = self.view.substr(line)
+                    self.view.insert(edit, line.end(), line_contents)
             else:
                 if forward:
                     self.view.insert(edit, region.begin(), self.view.substr(region))

@@ -6,17 +6,17 @@
 	{ "keys": ["alt+up"], "command": "swap_line_up" },
 	{ "keys": ["alt+down"], "command": "swap_line_down" },
 
-	{ "keys": ["ctrl+alt+up"], "command": "duplicate_line"} ,
-	{ "keys": ["ctrl+alt+down"], "command": "duplicate_line" },
+	{ "keys": ["ctrl+alt+up"], "command": "duplicate_line", "args": {"forward": false} },
+	{ "keys": ["ctrl+alt+down"], "command": "duplicate_line", "args": {"forward": true} },
 
 	{ "keys": ["ctrl+t"], "command": "find_under_expand" },
 
 	{ "keys": ["ctrl+alt+t"], "command": "transpose" },
 
-	{ "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} }
+	{ "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 
-	{ "keys": ["alt+/"], "command": "auto_complete" },
-	{ "keys": ["alt+/"], "command": "replace_completion_with_auto_complete", "context":
+	{ "keys": ["alt+\/"], "command": "auto_complete" },
+	{ "keys": ["alt+\/"], "command": "replace_completion_with_auto_complete", "context":
 		[
 			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
@@ -24,4 +24,5 @@
 		]
 	},
 
+	{ "keys": ["ctrl+alt+q"], "command": "save_macro" },
 ]
