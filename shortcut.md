@@ -43,3 +43,7 @@ ctrl+alt+right:
 alt+left:
 alt+right:上一次编辑位置.
 	PS：SublimeText:原快捷键是alt+-和alt+shift+-，且只能跳转到上一次保存之后的最早位置
+
+ctrl+b:编译运行
+
+ctrl+o:打开文件
