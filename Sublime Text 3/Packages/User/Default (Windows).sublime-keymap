@@ -24,5 +24,23 @@
 		]
 	},
 
-	{ "keys": ["ctrl+alt+q"], "command": "save_macro" },
+	{ "keys": ["ctrl+shift+q"], "command": "save_macro" },
+	{ "keys": ["ctrl+alt+q"], "command": "run_macro" },
+
+	{ "keys": ["alt+shift+r"], "command": "find_all_under" },
+
+	{ "keys": ["ctrl+p"], "command": "goto_symbol_in_project" },
+
+	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+
+	{ "keys": ["ctrl+alt+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
+	{ "keys": ["ctrl+alt+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+	
+	{ "keys": ["alt+left"], "command": "jump_back" },
+	{ "keys": ["alt+right"], "command": "jump_forward" },
+
+	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+	{ "keys": ["ctrl+alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+
 ]
+
