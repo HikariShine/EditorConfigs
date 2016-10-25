@@ -11,7 +11,7 @@
 
 	{ "keys": ["ctrl+t"], "command": "find_under_expand" },
 
-	{ "keys": ["ctrl+alt+t"], "command": "transpose" },
+	{ "keys": ["ctrl+alt+shift+t"], "command": "transpose" },
 
 	{ "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 
@@ -42,5 +42,13 @@
 	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	{ "keys": ["ctrl+alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
 
+	// 下面两个快捷键与backspace重复，可修改为其他
+	{ "keys": ["shift+backspace"], "command": "left_delete" },
+	{ "keys": ["ctrl+shift+backspace"], "command": "left_delete" },
+
+	// 下面一个与enter键重复，修改为其他的
+	{ "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} },
+
+	{ "keys": ["ctrl+alt+v"], "command": "paste_from_history" },
 ]
 
