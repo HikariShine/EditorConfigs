@@ -1,5 +1,5 @@
 [
-	
+	// 注意：能不适用ctrl+alt+<alphanum>就不使用，win键是super
 	{ "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
 	{ "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
 
@@ -42,13 +42,30 @@
 	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	{ "keys": ["ctrl+alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
 
-	// 下面两个快捷键与backspace重复，可修改为其他
-	{ "keys": ["shift+backspace"], "command": "left_delete" },
-	{ "keys": ["ctrl+shift+backspace"], "command": "left_delete" },
+	// 下面五个是关于backspace的快捷键
+	{ "keys": ["shift+backspace"], "command": "right_delete" },
+	// 原快捷键
+	{ "keys": ["ctrl+backspace"], "command": "delete_word", "args": { "forward": false } },
+	// 原快捷键
+	{ "keys": ["ctrl+shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
+	// 新增快捷键，与ctrl+delete功能相同
+	{ "keys": ["alt+backspace"], "command": "delete_word", "args": { "forward": true } },
+	// 新增快捷键，与ctrl+shift+delete功能相同
+	{ "keys": ["alt+shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
+	// 与上面五个类似，下面是关于delete的快捷键，可以不用知道，毕竟delete没有backspace用着方便
+	// 因shift+delete被剪切占用，故下面只有四个，shift+insert粘贴，ctrl+insert复制。
+	// 原快捷键
+	{ "keys": ["ctrl+delete"], "command": "delete_word", "args": { "forward": true } },
+	// 原快捷键
+	{ "keys": ["ctrl+shift+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
+	// 新增快捷键，与ctrl+backspace功能相同
+	{ "keys": ["alt+delete"], "command": "delete_word", "args": { "forward": true } },
+	// 新增快捷键，与ctrl+shift+backspace功能相同
+	{ "keys": ["alt+shift+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
 
 	// 下面一个与enter键重复，修改为其他的
 	{ "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} },
 
-	{ "keys": ["ctrl+alt+v"], "command": "paste_from_history" },
+	{ "keys": ["alt+shift+v"], "command": "paste_from_history" },
 ]
 
