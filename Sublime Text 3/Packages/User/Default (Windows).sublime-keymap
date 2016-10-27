@@ -1,4 +1,6 @@
 [
+	// 对于快捷键的解析顺序，是从该文件的底部解析到顶部，最先匹配的快捷键即是该功能键。故带条件判断的快捷键一般要放在后面
+	// 解析完该文件再解析默认的keymap文件
 	// 注意：能不适用ctrl+alt+<alphanum>就不使用，win键是super
 	{ "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
 	{ "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
@@ -9,9 +11,7 @@
 	{ "keys": ["ctrl+alt+up"], "command": "duplicate_line", "args": {"forward": false} },
 	{ "keys": ["ctrl+alt+down"], "command": "duplicate_line", "args": {"forward": true} },
 
-	{ "keys": ["ctrl+t"], "command": "find_under_expand" },
-
-	{ "keys": ["ctrl+alt+shift+t"], "command": "transpose" },
+	{ "keys": ["alt+shift+t"], "command": "transpose" },
 
 	{ "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 
@@ -26,8 +26,6 @@
 
 	{ "keys": ["ctrl+shift+q"], "command": "save_macro" },
 	{ "keys": ["ctrl+alt+q"], "command": "run_macro" },
-
-	{ "keys": ["alt+shift+r"], "command": "find_all_under" },
 
 	{ "keys": ["ctrl+p"], "command": "goto_symbol_in_project" },
 
@@ -64,8 +62,53 @@
 	{ "keys": ["alt+shift+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
 
 	// 下面一个与enter键重复，修改为其他的
-	{ "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} },
+	// 屏蔽此功能，影响默认对context的判断
+	// { "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} },
 
 	{ "keys": ["alt+shift+v"], "command": "paste_from_history" },
-]
 
+	// 以下几个是原来关于F3的几个指令，因f3被指向定义占用，故用下面代替
+	{ "keys": ["ctrl+,"], "command": "find_under" },
+	{ "keys": ["ctrl+shift+,"], "command": "find_under_prev" },
+	// 上面两个与下面两个的区别在于
+	// 上面两个自动选中临近单词进行搜索
+	// 下面两个是ctrl+f里面搜索内容的下一个与上一个
+	{ "keys": ["alt+,"], "command": "find_next" },
+	{ "keys": ["alt+shift+,"], "command": "find_prev" },
+	{ "keys": ["alt+shift+r"], "command": "find_all_under" },
+
+	// 指向定义，原f12功能，虽然大多数编辑器中f3都是查找下一个
+	// 但是因为Eclipse使用过度，f3跳转定义估计很难改，就用f3吧
+	// ctrl+o的习惯到现在还没改成ctrl+r
+	{ "keys": ["f3"], "command": "goto_definition" },
+
+	// 下面两个同ctrl+/和ctrl+shift+/
+	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["alt+shift+c"], "command": "toggle_comment", "args": { "block": true } },
+
+
+
+	// 以下是插件快捷键，注意安装插件后再使用
+
+	// Emmet默认展开快捷键，默认是ctrl+e，修改为ctrl+t
+	{
+        "keys": [
+            "ctrl+t"
+        ], 
+        "args": {
+            "action": "expand_abbreviation"
+        }, 
+        "command": "run_emmet_action", 
+        "context": [
+            {
+                "key": "emmet_action_enabled.expand_abbreviation"
+            }
+        ]
+    }, 
+    // 原ctrl+e功能为slurp_find_string
+    // 貌似是使用选中内容搜索，并没有什么卵用，替换成依次向下选择多个
+    // 纠正上面的内容，其实原来是有作用的，他的作用是替换ctrl+f等系列搜索面板中搜索框的字符串
+    // ctrl+shift+e是替换替换框的字符串，暂时先舍弃该功能。
+    { "keys": ["ctrl+e"], "command": "find_under_expand" },
+
+]
