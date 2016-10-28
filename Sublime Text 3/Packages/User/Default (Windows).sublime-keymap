@@ -27,18 +27,16 @@
 	{ "keys": ["ctrl+shift+q"], "command": "save_macro" },
 	{ "keys": ["ctrl+alt+q"], "command": "run_macro" },
 
-	{ "keys": ["ctrl+p"], "command": "goto_symbol_in_project" },
-
-	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
-
 	{ "keys": ["ctrl+alt+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
 	{ "keys": ["ctrl+alt+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
 	
 	{ "keys": ["alt+left"], "command": "jump_back" },
 	{ "keys": ["alt+right"], "command": "jump_forward" },
 
+
+	{ "keys": ["alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
 	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
-	{ "keys": ["ctrl+alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+	{ "keys": ["ctrl+alt+r"], "command": "goto_symbol_in_project" },
 
 	// 下面五个是关于backspace的快捷键
 	{ "keys": ["shift+backspace"], "command": "right_delete" },
@@ -86,6 +84,7 @@
 	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
 	{ "keys": ["alt+shift+c"], "command": "toggle_comment", "args": { "block": true } },
 
+	{ "keys": ["alt+super+e"], "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"}},
 
 
 	// 以下是插件快捷键，注意安装插件后再使用
