@@ -38,6 +38,24 @@
 	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	{ "keys": ["ctrl+alt+r"], "command": "goto_symbol_in_project" },
 
+	// 原alt+r功能，修改为alt+x，正则匹配
+	// 原搜索替换时切换用功能键，替换为alt+z,alt+x,alt+c,alt+a
+	{ "keys": ["alt+z"], "command": "toggle_regex", "context":
+		[
+			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+x"], "command": "toggle_case_sensitive", "context":
+		[
+			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+c"], "command": "toggle_whole_word", "context":
+		[
+			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
+		]
+	},
+
 	// 下面五个是关于backspace的快捷键
 	{ "keys": ["shift+backspace"], "command": "right_delete" },
 	// 原快捷键
