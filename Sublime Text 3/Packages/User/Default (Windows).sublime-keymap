@@ -2,14 +2,19 @@
 	// 对于快捷键的解析顺序，是从该文件的底部解析到顶部，最先匹配的快捷键即是该功能键。故带条件判断的快捷键一般要放在后面
 	// 解析完该文件再解析默认的keymap文件
 	// 注意：能不适用ctrl+alt+<alphanum>就不使用，win键是super
-	{ "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
-	{ "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
-
+	{ "keys": ["ctrl+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["ctrl+down"], "command": "select_lines", "args": {"forward": true} },
 	{ "keys": ["alt+up"], "command": "swap_line_up" },
 	{ "keys": ["alt+down"], "command": "swap_line_down" },
-
 	{ "keys": ["ctrl+alt+up"], "command": "duplicate_line", "args": {"forward": false} },
 	{ "keys": ["ctrl+alt+down"], "command": "duplicate_line", "args": {"forward": true} },
+	{ "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
+    { "keys": ["alt+shift+up"], "command": "scroll_lines", "args": {"amount": 1.0 } },
+	{ "keys": ["alt+shift+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
+
+    { "keys": ["ctrl+alt+shift+up"], "command": "scroll_to_bof" },
+	{ "keys": ["ctrl+alt+shift+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
 
 	{ "keys": ["alt+shift+t"], "command": "transpose" },
 
@@ -43,7 +48,7 @@
 	{ "keys": ["alt+z"], "command": "toggle_regex", "context":
 		[
 			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
-		]
+		] 
 	},
 	{ "keys": ["alt+x"], "command": "toggle_case_sensitive", "context":
 		[
@@ -127,5 +132,8 @@
     // 纠正上面的内容，其实原来是有作用的，他的作用是替换ctrl+f等系列搜索面板中搜索框的字符串
     // ctrl+shift+e是替换替换框的字符串，暂时先舍弃该功能。
     { "keys": ["ctrl+e"], "command": "find_under_expand" },
+
+	{ "keys": ["ctrl+k", "ctrl+e"], "command": "find_under_expand_skip" },
+
 
 ]
