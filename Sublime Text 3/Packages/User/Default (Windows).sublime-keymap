@@ -135,5 +135,5 @@
 
 	{ "keys": ["ctrl+k", "ctrl+e"], "command": "find_under_expand_skip" },
 
-
+	{ "keys": ["f12"], "command": "open_in_browser" },
 ]
