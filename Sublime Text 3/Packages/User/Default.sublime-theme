@@ -1,0 +1,113 @@
+[
+    {
+        "class": "close_button",
+        "layer0.texture": "Theme - Default/light_x_bright.png",
+        "layer0.opacity": 0.7
+    },
+    {
+        "class": "sidebar_tree",
+        "layer0.tint": [39, 40, 34] //230,230,230
+    },
+    {
+        "class": "sidebar_heading",
+        "color": [200, 200, 200],  //130,130,130 headers (open files, folders)
+        "shadow_color": [0, 0, 0]// 250 250 250
+    },
+    {
+        "class": "sidebar_label",
+        "color": [200, 200, 200]// 0 0 0  text in the sidebar tree
+    },
+    {
+        "class": "text_line_control",
+        "layer0.tint": 0
+    },
+        // file and folder icons
+    {
+        "class": "icon_file_type",
+        // layer0.texture is filled in by code with the relevant icon name
+        "layer0.opacity": 1.0,
+        "content_margin": [8, 8]
+    },
+    {
+        "class": "icon_folder",
+        "layer0.texture": "Theme - Default/icons/folder.png",
+        "layer0.opacity": 1.0,
+        "content_margin": [8, 8]
+    },
+    {
+        "class": "icon_folder",
+        "parents":
+        [
+            { "class": "tree_row", "attributes": ["expanded"] }
+        ],
+        "layer0.texture": "Theme - Default/icons/folder_open.png",
+    },
+    {
+        "class": "icon_folder_loading",
+        "layer0.texture":
+        {
+            "keyframes":
+            [
+                "Theme - Default/icons/spinner7.png",
+                "Theme - Default/icons/spinner6.png",
+                "Theme - Default/icons/spinner5.png",
+                "Theme - Default/icons/spinner4.png",
+                "Theme - Default/icons/spinner3.png",
+                "Theme - Default/icons/spinner2.png",
+                "Theme - Default/icons/spinner1.png",
+                "Theme - Default/icons/spinner.png",
+            ],
+            "loop": true,
+            "frame_time": 0.075,
+        },
+
+        "layer0.opacity": 1.0,
+        "content_margin": [8, 8]
+    },
+    {
+        "class": "icon_folder_dup",
+        "layer0.texture": "Theme - Default/icons/folder_dup.png",
+        "layer0.opacity": 1.0,
+        "content_margin": [8, 8]
+    },
+    // 以下quick_panel控制打开panel的相关配色
+    // {
+    //     "class": "quick_panel_row",
+    //     "layer0.texture": "Theme - Default/panel_row.png",
+    //     "layer0.inner_margin": [2, 2, 2, 2],
+    //     "layer0.opacity": 1.0
+    // },
+    // {
+    //     "class": "quick_panel_row",
+    //     "attributes": ["selected"],
+    //     "layer0.texture": "Theme - Default/panel_row_selected.png"
+    // },
+    // {
+    //     "class": "quick_panel_label",
+    //     "bg": [87, 87, 87, 255],
+    //     "selected_match_fg": [255, 255, 255, 255],
+    //     "selected_bg": [64, 64, 64, 255]
+    // },
+    // {
+    //     "class": "quick_panel_path_label",
+    //     "bg": [87, 87, 87, 255],
+    //     "selected_match_fg": [255, 255, 255, 255],
+    //     "selected_bg": [64, 64, 64, 255]
+    // },
+    // {
+    //     "class": "quick_panel_score_label",
+    //     "bg": [87, 87, 87, 255],
+    //     "selected_fg": [166, 229, 255, 255],
+    //     "selected_bg": [64, 64, 64, 255]
+    // },
+    {
+        "class": "auto_complete_label",
+        "bg": [255, 255, 255, 255],
+        "selected_match_fg": [0, 0, 0, 255],
+        "selected_bg": [156, 185, 223, 255]
+    },
+    {
+        "class": "fold_button_control",
+        "layer1.texture": "Theme - Default.arrow_right.png"
+    }
+]
