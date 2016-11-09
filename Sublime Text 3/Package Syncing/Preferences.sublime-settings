@@ -1,0 +1,21 @@
+{
+	"caret_style": "phase",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "微软雅黑Monaco",
+	"font_size": 12,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"rulers":
+	[
+		90,
+		120
+	],
+	"theme": "Soda Dark 3.sublime-theme",
+	"trim_trailing_white_space_on_save": true
+}

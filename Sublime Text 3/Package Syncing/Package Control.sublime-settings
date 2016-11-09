@@ -1,0 +1,30 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Emmet",
+		"FindKeyConflicts",
+		"Package Control",
+		"Package Syncing",
+		"SideBarEnhancements",
+		"Terminal",
+		"Theme - Soda"
+	],
+	"files_to_include": [
+		"*.sublime-build",
+		"*.sublime-commands",
+		"*.sublime-completions",
+		"*.sublime-keymap",
+		"*.sublime-menu",
+		"*.sublime-settings",
+		"*.sublime-snippet",
+		"*.sublime-macro",
+		"*.tmLanguage",
+		"*.tmTheme",
+		"*.py"
+	]
+}

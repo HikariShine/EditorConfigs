@@ -1,0 +1,168 @@
+[
+	// 对于快捷键的解析顺序，是从该文件的底部解析到顶部，最先匹配的快捷键即是该功能键。故带条件判断的快捷键一般要放在后面
+	// 解析完该文件再解析默认的keymap文件
+	// 注意：能不适用ctrl+alt+<alphanum>就不使用，win键是super
+	{ "keys": ["ctrl+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["ctrl+down"], "command": "select_lines", "args": {"forward": true} },
+	{ "keys": ["alt+up"], "command": "swap_line_up" },
+	{ "keys": ["alt+down"], "command": "swap_line_down" },
+	{ "keys": ["ctrl+alt+up"], "command": "duplicate_line", "args": {"forward": false} },
+	{ "keys": ["ctrl+alt+down"], "command": "duplicate_line", "args": {"forward": true} },
+	{ "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
+    { "keys": ["alt+shift+up"], "command": "scroll_lines", "args": {"amount": 1.0 } },
+	{ "keys": ["alt+shift+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
+
+    { "keys": ["ctrl+alt+shift+up"], "command": "scroll_to_bof" },
+	{ "keys": ["ctrl+alt+shift+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
+
+	{ "keys": ["alt+shift+t"], "command": "transpose" },
+
+	{ "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+
+	{ "keys": ["alt+\/"], "command": "auto_complete" },
+	{ "keys": ["alt+\/"], "command": "replace_completion_with_auto_complete", "context":
+		[
+			{ "key": "last_command", "operator": "equal", "operand": "insert_best_completion" },
+			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
+			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+		]
+	},
+
+	{ "keys": ["ctrl+shift+q"], "command": "save_macro" },
+	{ "keys": ["ctrl+alt+q"], "command": "run_macro" },
+
+	{ "keys": ["ctrl+alt+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
+	{ "keys": ["ctrl+alt+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+
+	{ "keys": ["alt+left"], "command": "jump_back" },
+	{ "keys": ["alt+right"], "command": "jump_forward" },
+
+	{ "keys": ["alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+	{ "keys": ["ctrl+shift+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+	{ "keys": ["ctrl+alt+r"], "command": "goto_symbol_in_project" },
+
+	// 原alt+r功能，修改为alt+x，正则匹配
+	// 原搜索替换时切换用功能键，替换为alt+z,alt+x,alt+c,alt+a
+	{ "keys": ["alt+z"], "command": "toggle_regex", "context":
+		[
+			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+x"], "command": "toggle_case_sensitive", "context":
+		[
+			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
+		]
+	},
+	{ "keys": ["alt+c"], "command": "toggle_whole_word", "context":
+		[
+			{ "key": "setting.is_widget", "operator": "equal", "operand": true }
+		]
+	},
+
+	// 下面五个是关于backspace的快捷键
+	{ "keys": ["shift+backspace"], "command": "right_delete" },
+	// 原快捷键
+	{ "keys": ["ctrl+backspace"], "command": "delete_word", "args": { "forward": false } },
+	// 原快捷键
+	{ "keys": ["ctrl+shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
+	// 新增快捷键，与ctrl+delete功能相同
+	{ "keys": ["alt+backspace"], "command": "delete_word", "args": { "forward": true } },
+	// 新增快捷键，与ctrl+shift+delete功能相同
+	{ "keys": ["alt+shift+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
+	// 与上面五个类似，下面是关于delete的快捷键，可以不用知道，毕竟delete没有backspace用着方便
+	// 因shift+delete被剪切占用，故下面只有四个，shift+insert粘贴，ctrl+insert复制。
+	// 原快捷键
+	{ "keys": ["ctrl+delete"], "command": "delete_word", "args": { "forward": true } },
+	// 原快捷键
+	{ "keys": ["ctrl+shift+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
+	// 新增快捷键，与ctrl+backspace功能相同
+	{ "keys": ["alt+delete"], "command": "delete_word", "args": { "forward": true } },
+	// 新增快捷键，与ctrl+shift+backspace功能相同
+	{ "keys": ["alt+shift+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
+
+	// 下面一个与enter键重复，修改为其他的
+	// 屏蔽此功能，影响默认对context的判断
+	// { "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} },
+
+	{ "keys": ["alt+shift+v"], "command": "paste_from_history" },
+
+	// 以下几个是原来关于F3的几个指令，因f3被指向定义占用，故用下面代替
+	{ "keys": ["ctrl+,"], "command": "find_under" },
+	{ "keys": ["ctrl+shift+,"], "command": "find_under_prev" },
+	// 上面两个与下面两个的区别在于
+	// 上面两个自动选中临近单词进行搜索
+	// 下面两个是ctrl+f里面搜索内容的下一个与上一个
+	{ "keys": ["alt+,"], "command": "find_next" },
+	{ "keys": ["alt+shift+,"], "command": "find_prev" },
+	{ "keys": ["alt+shift+r"], "command": "find_all_under" },
+
+	// 指向定义，原f12功能，虽然大多数编辑器中f3都是查找下一个
+	// 但是因为Eclipse使用过度，f3跳转定义估计很难改，就用f3吧
+	// ctrl+o的习惯到现在还没改成ctrl+r
+	{ "keys": ["f3"], "command": "goto_definition" },
+
+	// 下面两个同ctrl+/和ctrl+shift+/
+	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["alt+shift+c"], "command": "toggle_comment", "args": { "block": true } },
+
+	{ "keys": ["alt+super+e"], "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"}},
+
+
+	// 以下是插件快捷键，注意安装插件后再使用
+
+	// Emmet默认展开快捷键，默认是ctrl+e，修改为ctrl+t
+	{
+        "keys": [
+            "ctrl+t"
+        ],
+        "args": {
+            "action": "expand_abbreviation"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.expand_abbreviation"
+            }
+        ]
+    },
+    // 原ctrl+e功能为slurp_find_string
+    // 貌似是使用选中内容搜索，并没有什么卵用，替换成依次向下选择多个
+    // 纠正上面的内容，其实原来是有作用的，他的作用是替换ctrl+f等系列搜索面板中搜索框的字符串
+    // ctrl+shift+e是替换替换框的字符串，暂时先舍弃该功能。
+    { "keys": ["ctrl+e"], "command": "find_under_expand" },
+
+	{ "keys": ["ctrl+k", "ctrl+e"], "command": "find_under_expand_skip" },
+
+	{ "keys": ["f12"], "command": "open_in_browser" },
+
+	// 选择相关，move to括号，使用ctrl+\替换，因ctrl+m并没有什么明显意义
+	// 原ctrl+l选择行功能，向右移动一位使用ctrl+;代替，原ctrl+;的功能已被alt+r使用
+	// 这样的好处是腾出了两个ctrl+字母的功能键
+	{ "keys": ["ctrl+\\"], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+;"], "command": "expand_selection", "args": {"to": "line"} },
+	{ "keys": ["alt+a"], "command": "expand_selection", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+shift+a"], "command": "expand_selection", "args": {"to": "scope"} },
+	{ "keys": ["alt+shift+a"], "command": "expand_selection", "args": {"to": "indentation"} },
+	{ "keys": ["ctrl+alt+shift+a"], "command": "expand_selection", "args": {"to": "tag"} },
+
+	{ "keys": ["ctrl+m"], "command": "context_menu" },
+
+	// 一些sidebarEnhancements配置
+	{ "keys": ["ctrl+alt+c"], "command": "copy_path" },
+
+	// terminal插件配置
+	{ "keys": ["ctrl+shift+x"], "command": "open_terminal" },
+	{ "keys": ["ctrl+shift+alt+x"], "command": "open_terminal_project_folder" },
+	// 此快捷键被terminal覆盖，改回去
+	{ "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+
+	// 自己写的插件，在sidebar展示并移动焦点到sidebar
+	{ "keys": ["ctrl+0"], "command": "reveal_and_focus_side_bar" },
+
+	// 自己写的插件，展示一个打开的文件列表，后期可以优化成带输入框的
+	{ "keys": ["ctrl+shift+o"], "command": "open_file_list" },
+
+
+
+]
