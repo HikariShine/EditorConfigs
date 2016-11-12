@@ -48,6 +48,7 @@
             "paths": []
         }
     },
+    // 这个命令可以改造为在此处打开命令行
     {
         "caption": "Open / Run",
         "id": "side-bar-open",

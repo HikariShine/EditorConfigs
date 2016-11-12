@@ -163,6 +163,6 @@
 	// 自己写的插件，展示一个打开的文件列表，后期可以优化成带输入框的
 	{ "keys": ["ctrl+shift+o"], "command": "open_file_list" },
 
-
+	// revert 还原所有未保存的修改，可以用于防止close命令的提示。
 
 ]

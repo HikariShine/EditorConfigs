@@ -1,3 +1,6 @@
+备份与还原请使用脚本，因为没有差异比较，所以一定要注意备份与还原的顺序
+
+
 安装的数据目录：C:\Users\Administrator\AppData\Roaming\Sublime Text 3
 
 安装的插件目录：${data_dir}\Installed Packages
