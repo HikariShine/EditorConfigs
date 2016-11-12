@@ -134,7 +134,7 @@
 
 	{ "keys": ["ctrl+k", "ctrl+e"], "command": "find_under_expand_skip" },
 
-	{ "keys": ["f12"], "command": "open_in_browser" },
+	{ "keys": ["f12"], "command": "context_open" },
 
 	// 选择相关，move to括号，使用ctrl+\替换，因ctrl+m并没有什么明显意义
 	// 原ctrl+l选择行功能，向右移动一位使用ctrl+;代替，原ctrl+;的功能已被alt+r使用
@@ -152,7 +152,8 @@
 	{ "keys": ["ctrl+alt+c"], "command": "copy_path" },
 
 	// terminal插件配置
-	{ "keys": ["ctrl+shift+x"], "command": "open_terminal" },
+	// { "keys": ["ctrl+shift+x"], "command": "open_terminal" },
+	{ "keys": ["ctrl+shift+x"], "command": "context_open_terminal" },
 	{ "keys": ["ctrl+shift+alt+x"], "command": "open_terminal_project_folder" },
 	// 此快捷键被terminal覆盖，改回去
 	{ "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },

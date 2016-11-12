@@ -2,10 +2,16 @@
     { "command": "open_context_url" },
     { "command": "context_goto_definition", "caption": "Goto Definition" },
     { "caption": "-", "id": "clipboard" },
-    { "command": "copy" },
-    { "command": "cut" },
-    { "command": "paste" },
-    { "command": "select_all" },
+    {
+        "caption": "Edit",
+        "id": "context-edit",
+        "children": [
+            { "command": "copy" },
+            { "command": "cut" },
+            { "command": "paste" },
+            { "command": "select_all" }
+        ]
+    },
     { "caption": "-", "id": "end" },
     {
         "caption": "aaaaa_side_bar",
@@ -52,7 +58,7 @@
     {
         "caption": "Open / Run",
         "id": "side-bar-open",
-        "command": "side_bar_open",
+        "command": "context_open",
         "args": {
             "paths": []
         }
@@ -721,7 +727,6 @@
         }
     },
     { "caption": "-", "id": "file" },
-    { "command": "open_in_browser", "caption": "Open in Browser" },
     { "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"}, "caption": "Open Containing Folder…" },
     { "command": "reveal_in_side_bar", "caption": "Reveal in Side Bar" },
 ]
