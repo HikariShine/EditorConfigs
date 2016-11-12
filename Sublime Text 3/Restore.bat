@@ -1,6 +1,5 @@
 @echo off
-echo 确认将当前目录下的的Sublime Text 3配置还原到当前系统下？
-
+echo 确认将当前目录下的Sublime Text 3配置还原到当前系统下？
 pause
 
 set source=%cd%\Packages\
