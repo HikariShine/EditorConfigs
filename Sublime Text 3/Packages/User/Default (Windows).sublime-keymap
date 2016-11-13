@@ -166,4 +166,9 @@
 
 	// revert 还原所有未保存的修改，可以用于防止close命令的提示。
 
+	{ "keys": ["alt+shift+u"], "command": "upper_case" },
+	{ "keys": ["alt+shift+l"], "command": "lower_case" },
+	{ "keys": ["alt+shift+s"], "command": "swap_case" },
+	{ "keys": ["alt+shift+x"], "command": "swap_name_style" },
+
 ]

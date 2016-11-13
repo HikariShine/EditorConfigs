@@ -17,5 +17,8 @@
 		120
 	],
 	"theme": "Soda Dark 3.sublime-theme",
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+
+	// 去除单词分割字符中的中划线-
+	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
 }
