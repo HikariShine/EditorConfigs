@@ -1,0 +1,3 @@
+[
+	{ "caption": "Open Terminal Here…", "command": "side_bar_open_terminal", "args": {"paths": []} }
+]

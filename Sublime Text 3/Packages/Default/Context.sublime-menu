@@ -2,6 +2,7 @@
     { "command": "open_context_url" },
     { "command": "context_goto_definition", "caption": "Goto Definition" },
     { "caption": "-", "id": "clipboard" },
+    { "command": "context_open_terminal", "caption": "Open Terminal Here..." },
     {
         "caption": "Edit",
         "id": "context-edit",
@@ -56,7 +57,7 @@
     },
     // 这个命令可以改造为在此处打开命令行
     {
-        "caption": "Open / Run",
+        "caption": "Open In Default",
         "id": "side-bar-open",
         "command": "context_open",
         "args": {

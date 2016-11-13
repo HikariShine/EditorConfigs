@@ -6,6 +6,9 @@ set source=%cd%\Packages\
 
 set destination=C:\Users\Guangshan\AppData\Roaming\Sublime Text 3\Packages\
 
+echo 先备份原Packages下所有文件到E盘的Backup中，以防万一
+xcopy "%destination%" "E:\Backup\" /s/q/y
+echo 备份完成
 xcopy "%source%Default" "%destination%Default\" /s/q/y
 
 xcopy "%source%Guangshan" "%destination%Guangshan\" /s/q/y

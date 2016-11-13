@@ -154,9 +154,9 @@
 	// terminal插件配置
 	// { "keys": ["ctrl+shift+x"], "command": "open_terminal" },
 	{ "keys": ["ctrl+shift+x"], "command": "context_open_terminal" },
-	{ "keys": ["ctrl+shift+alt+x"], "command": "open_terminal_project_folder" },
-	// 此快捷键被terminal覆盖，改回去
-	{ "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+	{ "keys": ["ctrl+shift+alt+x"], "command": "open_terminal_from_project" },
+	// 此快捷键被terminal覆盖，改回去，Terminal插件被我干掉了，这个也不要了
+	// { "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
 
 	// 自己写的插件，在sidebar展示并移动焦点到sidebar
 	{ "keys": ["ctrl+0"], "command": "reveal_and_focus_side_bar" },
