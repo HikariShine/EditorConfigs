@@ -134,6 +134,14 @@
 
 	{ "keys": ["ctrl+k", "ctrl+e"], "command": "find_under_expand_skip" },
 
+    { "keys": ["alt+shift+q"], "command": "slurp_find_string" },
+    { "keys": ["alt+shift+w"], "command": "slurp_replace_string" },
+
+    // 虽然感觉ctrl+t的功能和这里的alt+shift+e功能有关联
+    // 但是并想改ctrl+t为ctrl+e，因为ctrl+t可能并不常用
+    // 基本上tab就足够了，ctrl+t也可以理解为tab，就用ctrl+t吧
+    { "keys": ["alt+shift+e"], "command": "insert_snippet", "args": { "name": "Packages/XML/Snippets/long-tag.sublime-snippet" } },
+
 	{ "keys": ["f12"], "command": "context_open" },
 
 	// 选择相关，move to括号，使用ctrl+\替换，因ctrl+m并没有什么明显意义
@@ -146,7 +154,7 @@
 	{ "keys": ["alt+shift+a"], "command": "expand_selection", "args": {"to": "indentation"} },
 	{ "keys": ["ctrl+alt+shift+a"], "command": "expand_selection", "args": {"to": "tag"} },
 
-	// 跟着ctrl+;一起修改
+	// ctrl+shift+l的功能映射的ctrl+shift+;，与ctrl+l保持一致
 	{ "keys": ["ctrl+shift+;"], "command": "split_selection_into_lines" },
 
 	{ "keys": ["ctrl+m"], "command": "context_menu" },
