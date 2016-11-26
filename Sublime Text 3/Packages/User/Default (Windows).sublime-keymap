@@ -134,15 +134,16 @@
 
 	{ "keys": ["ctrl+k", "ctrl+e"], "command": "find_under_expand_skip" },
 
-	// q理解为query查询，替换搜索字符串
-    { "keys": ["alt+shift+q"], "command": "slurp_find_string" },
-	// w理解为write，替换替换字符串值。
-    { "keys": ["alt+shift+w"], "command": "slurp_replace_string" },
+	// 虽然感觉ctrl+t的功能和这里的alt+shift+e功能有关联
+	// 但是并想改ctrl+t为ctrl+e，因为ctrl+t可能并不常用
+	// 基本上tab就足够了，ctrl+t也可以理解为tab，就用ctrl+t吧
+	{ "keys": ["alt+shift+e"], "command": "insert_snippet", "args": { "name": "Packages/XML/Snippets/long-tag.sublime-snippet" } },
 
-    // 虽然感觉ctrl+t的功能和这里的alt+shift+e功能有关联
-    // 但是并想改ctrl+t为ctrl+e，因为ctrl+t可能并不常用
-    // 基本上tab就足够了，ctrl+t也可以理解为tab，就用ctrl+t吧
-    { "keys": ["alt+shift+e"], "command": "insert_snippet", "args": { "name": "Packages/XML/Snippets/long-tag.sublime-snippet" } },
+	// q理解为query查询，替换搜索字符串
+	{ "keys": ["alt+shift+q"], "command": "slurp_find_string" },
+
+	// w理解为write，替换替换字符串值。
+	{ "keys": ["alt+shift+w"], "command": "slurp_replace_string" },
 
 	{ "keys": ["f12"], "command": "context_open" },
 
