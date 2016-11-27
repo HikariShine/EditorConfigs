@@ -1,6 +1,6 @@
 {
 	"caret_style": "phase",
-	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/monokai-best (SL).tmTheme",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "微软雅黑Monaco",
@@ -18,5 +18,7 @@
 	],
 	"theme": "Soda Dark 3.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
-	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?"
+	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+	// These settings override both User and Default settings for the Python syntax
+
 }

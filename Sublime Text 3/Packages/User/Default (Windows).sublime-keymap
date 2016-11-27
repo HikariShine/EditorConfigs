@@ -162,6 +162,14 @@
 
 	{ "keys": ["ctrl+m"], "command": "context_menu" },
 
+	{ "keys": ["alt+shift+u"], "command": "upper_case" },
+	{ "keys": ["alt+shift+l"], "command": "lower_case" },
+	{ "keys": ["alt+shift+s"], "command": "swap_case" },
+	{ "keys": ["alt+shift+x"], "command": "swap_name_style" },
+
+
+	/* 以下为各种插件的配置 */
+
 	// 一些sidebarEnhancements配置
 	{ "keys": ["ctrl+alt+c"], "command": "copy_path" },
 
@@ -171,6 +179,7 @@
 	{ "keys": ["ctrl+shift+alt+x"], "command": "open_terminal_from_project" },
 	// 此快捷键被terminal覆盖，改回去，Terminal插件被我干掉了，这个也不要了
 	// { "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+	// revert 还原所有未保存的修改，可以用于防止close命令的提示。
 
 	// 自己写的插件，在sidebar展示并移动焦点到sidebar
 	{ "keys": ["ctrl+0"], "command": "reveal_and_focus_side_bar" },
@@ -178,11 +187,185 @@
 	// 自己写的插件，展示一个打开的文件列表，后期可以优化成带输入框的
 	{ "keys": ["ctrl+shift+o"], "command": "open_file_list" },
 
-	// revert 还原所有未保存的修改，可以用于防止close命令的提示。
 
-	{ "keys": ["alt+shift+u"], "command": "upper_case" },
-	{ "keys": ["alt+shift+l"], "command": "lower_case" },
-	{ "keys": ["alt+shift+s"], "command": "swap_case" },
-	{ "keys": ["alt+shift+x"], "command": "swap_name_style" },
+	// alignment插件配置
+	// ctrl+alt+a被截图占用，考虑ctrl+alt+a当截图快捷键的缺点(按alt键在某些情况下会丢失要截的区域)
+	// 以后要换掉，换成ctrl+shift+`
+	{ "keys": ["ctrl+alt+x"], "command": "alignment" },
+
+
+	// BracketHighlighter括号高亮
+    // Toggle Global Enable
+    {
+        "keys": ["ctrl+shift+super+\\"],
+        "command": "bh_toggle_enable"
+    },
+    // Search to end of file for bracket
+    {
+        "keys": ["ctrl+shift+super+q"],
+        "command": "bh_key",
+        "args":
+        {
+            "lines" : true
+        }
+    },
+    // Go to left bracket
+    {
+        "keys": ["ctrl+shift+super+up"],
+        "command": "bh_key",
+        "args":
+        {
+            "no_outside_adj": null,
+            "no_block_mode": null,
+            "lines" : true,
+            "plugin":
+            {
+                "type": ["__all__"],
+                "command": "bh_modules.bracketselect",
+                "args": {"select": "left"}
+            }
+        }
+    },
+    // Go to right bracket
+    {
+        "keys": ["ctrl+shift+super+down"],
+        "command": "bh_key",
+        "args":
+        {
+            "no_outside_adj": null,
+            "no_block_mode": null,
+            "lines" : true,
+            "plugin":
+            {
+                "type": ["__all__"],
+                "command": "bh_modules.bracketselect",
+                "args": {"select": "right"}
+            }
+        }
+    },
+    // Remove brackets
+    {
+        "keys": ["ctrl+shift+super+e"],
+        "command": "bh_remove_brackets"
+    },
+    // Toggle string escape mode for sub bracket search in strings
+    {
+        "keys": ["ctrl+shift+super+x"],
+        "command": "bh_toggle_string_escape_mode"
+    },
+    // Select text between brackets
+    {
+        "no_outside_adj": null,
+        "keys": ["ctrl+shift+super+s"],
+        "command": "bh_key",
+        "args":
+        {
+            "lines" : true,
+            "plugin":
+            {
+                "type": ["__all__"],
+                "command": "bh_modules.bracketselect"
+            }
+        }
+    },
+    // Select text including brackets
+    {
+        "keys": ["ctrl+shift+super+a"],
+        "command": "bh_key",
+        "args":
+        {
+            "no_outside_adj": null,
+            "lines" : true,
+            "plugin":
+            {
+                "type": ["__all__"],
+                "command": "bh_modules.bracketselect",
+                "args": {"always_include_brackets": true}
+            }
+        }
+    },
+    // Select tag name of HTML/XML tag (both opening name and closing)
+    {
+        "keys": ["ctrl+shift+super+r"],
+        "command": "bh_key",
+        "args":
+        {
+            "plugin":
+            {
+                "type": ["cfml", "html", "angle"],
+                "command": "bh_modules.tagnameselect"
+            }
+        }
+    },
+    // Select the attribute to the right of the cursor (will wrap inside the tag)
+    {
+        "keys": ["ctrl+shift+super+right"],
+        "command": "bh_key",
+        "args":
+        {
+            "plugin":
+            {
+                "type": ["cfml", "html", "angle"],
+                "command": "bh_modules.tagattrselect",
+                "args": {"direction": "right"}
+            }
+        }
+    },
+    // Select the attribute to the left of the cursor (will wrap inside the tag)
+    {
+        "keys": ["ctrl+shift+super+left"],
+        "command": "bh_key",
+        "args":
+        {
+            "plugin":
+            {
+                "type": ["cfml", "html", "angle"],
+                "command": "bh_modules.tagattrselect",
+                "args": {"direction": "left"}
+            }
+        }
+    },
+    // Convert single quote string to double quoted string and vice versa
+    // Will handle escaping or unescaping quotes within the string
+    {
+        "keys": ["ctrl+shift+super+'"],
+        "command": "bh_key",
+        "args":
+        {
+            "lines" : true,
+            "plugin":
+            {
+                "type": ["single_quote", "double_quote", "py_single_quote", "py_double_quote"],
+                "command": "bh_modules.swapquotes"
+            }
+        }
+    },
+    // Fold contents between brackets
+    {
+        "keys": ["ctrl+shift+super+["],
+        "command": "bh_key",
+        "args":
+        {
+            "plugin": {
+                "type": ["__all__"],
+                "command" : "bh_modules.foldbracket"
+            }
+		}
+    },
+    // Swap brackets with another type
+    {
+        "keys": ["ctrl+shift+super+e"],
+        "command": "swap_brackets"
+    },
+    // Surround selection with brackets from quick panel
+    {
+        "keys": ["ctrl+shift+super+w"],
+        "command": "wrap_brackets"
+    },
+    // Toggle high visibility mode
+    {
+        "keys": ["ctrl+shift+super+v"],
+        "command": "bh_toggle_high_visibility"
+    }
 
 ]

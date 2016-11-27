@@ -19,12 +19,20 @@
 	],
 	"installed_packages":
 	[
-		"AdvancedNewFile",
+		"Alignment",
+		"Anaconda",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"Colorsublime",
 		"Emmet",
 		"FindKeyConflicts",
+		"Git",
+		"GitGutter",
 		"Package Control",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeREPL",
 		"Theme - Soda"
 	]
 }
