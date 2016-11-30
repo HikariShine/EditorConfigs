@@ -342,7 +342,7 @@
     },
     // Fold contents between brackets
     {
-        "keys": ["ctrl+shift+super+["],
+        "keys": ["ctrl+shift+super+/"],
         "command": "bh_key",
         "args":
         {
@@ -366,6 +366,80 @@
     {
         "keys": ["ctrl+shift+super+v"],
         "command": "bh_toggle_high_visibility"
-    }
+    },
+
+
+    // Color highlighter插件配置
+    {
+        "keys": ["alt+super+c"],
+        "command": "color_picker",
+        "context": [
+            {
+                "key": "color_highlighter.color_picker"
+            }
+        ]
+    },
+    {
+        "keys": ["alt+super+a"],
+        "command": "color_convert",
+        "context": [
+            {
+                "key": "color_highlighter.color_convert"
+            }
+        ]
+    },
+    {
+        "keys": ["alt+super+,"],
+        "command": "color_convert_prev",
+        "context": [
+            {
+                "key": "color_highlighter.color_convert_prev"
+            }
+        ]
+    },
+    {
+        "keys": ["alt+super+."],
+        "command": "color_convert_next",
+        "context": [
+            {
+                "key": "color_highlighter.color_convert_next"
+            }
+        ]
+    },
+    {
+        "keys": ["alt+super+d"],
+        "command": "go_to_var_definition",
+        "context": [
+            {
+                "key": "color_highlighter.go_to_var_definition"
+            }
+        ]
+    },
+
+
+    // gitgutter配置
+    { "keys": ["ctrl+shift+alt+c", "up"], "command": "git_gutter_prev_change" },
+    { "keys": ["ctrl+shift+alt+c", "down"], "command": "git_gutter_next_change" },
+    { "keys": ["ctrl+shift+alt+c", "d"], "command": "git_gutter_diff_popup" },
+    { "keys": ["ctrl+shift+alt+c", "v"], "command": "git_gutter_show_compare" },
+    { "keys": ["ctrl+shift+alt+c", "h"], "command": "git_gutter_compare_head" },
+    { "keys": ["ctrl+shift+alt+c", "o"], "command": "git_gutter_compare_origin" },
+    { "keys": ["ctrl+shift+alt+c", "c"], "command": "git_gutter_compare_commit" },
+    { "keys": ["ctrl+shift+alt+c", "b"], "command": "git_gutter_compare_branch" },
+    { "keys": ["ctrl+shift+alt+c", "t"], "command": "git_gutter_compare_tag" },
+
+
+    // sublimelinter配置
+    { "keys": ["ctrl+super+l"], "command": "sublimelinter_lint" },
+    { "keys": ["ctrl+super+down"], "command": "sublimelinter_goto_error", "args": {"direction": "next"} },
+    { "keys": ["ctrl+super+up"], "command": "sublimelinter_goto_error", "args": {"direction": "previous"} },
+    { "keys": ["ctrl+super+a"], "command": "sublimelinter_show_all_errors" },
+    { "keys": ["ctrl+super+t"], "command": "sublimelinter_toggle_linter", "args": {"which": "all"}},
+
+
+    // sublimeCodeIntel配置
+    { "keys": ["super+alt+/"], "command": "code_intel_auto_complete" },
+    { "keys": ["super+alt+ctrl+up"], "command": "goto_python_definition"},
+    { "keys": ["super+alt+ctrl+left"], "command": "back_to_python_definition"}
 
 ]

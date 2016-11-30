@@ -15,6 +15,11 @@ xcopy "%source%\Guangshan" "%destination%\Guangshan\" /s/q/y
 
 xcopy "%source%\User" "%destination%\User\" /s/q/y
 
+xcopy "%source%\Color Highlighter" "%destination%\Color Highlighter\" /s/q/y
+
+echo ªπ‘≠codeIntelµƒ≈‰÷√
+xcopy "%source%\.codeintel\config" "%USERPROFILE%\.codeintel\" /s/q/y
+
 pause
 
 exit

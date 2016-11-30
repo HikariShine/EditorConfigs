@@ -6,5 +6,9 @@ set source=%APPDATA%\Sublime Text 3\Packages
 xcopy "%source%\Default" "%destination%\Default\" /s/q/y
 xcopy "%source%\Guangshan" "%destination%\Guangshan\" /s/q/y
 xcopy "%source%\User" "%destination%\User\" /s/q/y /exclude:Backup.ignore
+xcopy "%source%\Color Highlighter" "%destination%\Color Highlighter\" /s/q/y
+echo ±∏∑›sublimeCodeIntelµƒ≈‰÷√
+xcopy "%USERPROFILE%\.codeintel\config" "%destination%\.codeintel\" /s/q/y
+
 pause
 exit
