@@ -16,17 +16,23 @@
         "rubyExtraPaths": []
     },
     "Python": {
-        "python": 'C:/Python27/python.exe',
+        "python": '~/Python/python.exe',
         "pythonExtraPaths": [
-            "C:/Python27/DLLs",
-            "C:/Python27",
-            "C:/Python27/Lib",
-            "C:/Python27/Lib/lib-tk",
-            "C:/Python27/Lib/site-packages",
+            "~/Python",
+            "~/Python/DLLs",
+            "~/Python/Lib",
+            "~/Python/Lib/lib-tk",
+            "~/Python/Lib/site-packages",
         ]
     },
     "Python3": {
-        "python": '/usr/bin/python3',
-        "pythonExtraPaths": []
+        "python": '~/Python3/python.exe',
+        "pythonExtraPaths": [
+            "~/Python3",
+            "~/Python3/DLLs",
+            "~/Python3/Lib",
+            "~/Python3/Lib/lib-tk",
+            "~/Python3/Lib/site-packages",
+        ]
     }
 }

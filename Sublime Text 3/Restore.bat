@@ -22,4 +22,8 @@ xcopy "%source%\.codeintel\config" "%USERPROFILE%\.codeintel\" /s/q/y
 
 pause
 
+echo ´´½¨Á´½Ó
+call Makelink.bat
+
+
 exit
