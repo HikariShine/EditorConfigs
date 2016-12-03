@@ -1,25 +1,25 @@
 {
     "codeintel_language_settings": {
         "Python3": {
-            "python3": "python",
+            "python3": "$PYTHON_HOME/python",
             "codeintel_scan_extra_dir": [
-                "~/Python3",
-                "~/Python3/DLLs",
-                "~/Python3/Lib",
-                "~/Python3/Lib/lib-tk",
-                "~/Python3/Lib/site-packages",
+                "$PYTHON_HOME",
+                "$PYTHON_HOME/DLLs",
+                "$PYTHON_HOME/Lib",
+                "$PYTHON_HOME/Lib/lib-tk",
+                "$PYTHON_HOME/Lib/site-packages",
             ],
             "codeintel_scan_files_in_project": true,
             "codeintel_selected_catalogs": []
         },
         "Python": {
-            "python": "python",
+            "python": "$PYTHON_HOME/python",
             "codeintel_scan_extra_dir": [
-                "~/Python",
-                "~/Python/DLLs",
-                "~/Python/Lib",
-                "~/Python/Lib/lib-tk",
-                "~/Python/Lib/site-packages",
+                "$PYTHON_HOME",
+                "$PYTHON_HOME/DLLs",
+                "$PYTHON_HOME/Lib",
+                "$PYTHON_HOME/Lib/lib-tk",
+                "$PYTHON_HOME/Lib/site-packages",
             ],
             "codeintel_scan_files_in_project": true,
             "codeintel_selected_catalogs": []

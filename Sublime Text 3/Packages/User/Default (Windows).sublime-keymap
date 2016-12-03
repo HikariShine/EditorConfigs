@@ -191,7 +191,7 @@
 	// alignment插件配置
 	// ctrl+alt+a被截图占用，考虑ctrl+alt+a当截图快捷键的缺点(按alt键在某些情况下会丢失要截的区域)
 	// 以后要换掉，换成ctrl+shift+`
-	{ "keys": ["ctrl+alt+x"], "command": "alignment" },
+    { "keys": ["ctrl+alt+a"], "command": "alignment" },
 
 
 	// BracketHighlighter括号高亮
@@ -380,7 +380,7 @@
         ]
     },
     {
-        "keys": ["alt+super+a"],
+        "keys": ["alt+super+x"],
         "command": "color_convert",
         "context": [
             {
@@ -407,7 +407,7 @@
         ]
     },
     {
-        "keys": ["alt+super+d"],
+        "keys": ["alt+super+z"],
         "command": "go_to_var_definition",
         "context": [
             {
@@ -438,8 +438,400 @@
 
 
     // sublimeCodeIntel配置
-    { "keys": ["super+alt+/"], "command": "code_intel_auto_complete" },
-    { "keys": ["super+alt+ctrl+up"], "command": "goto_python_definition"},
-    { "keys": ["super+alt+ctrl+left"], "command": "back_to_python_definition"}
+    { "keys": ["alt+super+/"], "command": "code_intel_auto_complete" },
+    { "keys": ["alt+super+up"], "command": "goto_python_definition"},
+    { "keys": ["alt+super+left"], "command": "back_to_python_definition"},
+
+    // anaconda插件配置
+    {
+        "command": "anaconda_find_usages", "keys": ["alt+super+a"], "context": [
+            {"key": "selector", "operator": "equal", "operand": "source.python"}
+        ]
+    },
+    {
+        "command": "anaconda_goto", "keys": ["alt+super+s"], "context": [
+            {"key": "selector", "operator": "equal", "operand": "source.python"}
+        ]
+    },
+    {
+        "command": "anaconda_doc", "keys": ["alt+super+d"], "context": [
+            {"key": "selector", "operator": "equal", "operand": "source.python"}
+        ]
+    },
+    {
+        "command": "anaconda_auto_format", "keys": ["alt+super+f"], "context": [
+            {"key": "selector", "operator": "equal", "operand": "source.python"}
+        ]
+    },
+
+
+    // emmet配置
+    {
+        "keys": [
+            "ctrl+super+;"
+        ],
+        "args": {
+            "action": "remove_tag"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.remove_tag"
+            }
+        ]
+    },
+    // slash斜杠，/斜杠 slash forward_slash，\反斜杠 back_slash
+    {
+        "keys": [
+            "ctrl+super+forward_slash"
+        ],
+        "args": {
+            "action": "toggle_comment"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "operand": "source.css, source.less, source.scss, source.postcss, text.xml, text.html - source",
+                "operator": "equal",
+                "match_all": true,
+                "key": "selector"
+            },
+            {
+                "match_all": true,
+                "key": "emmet_action_enabled.toggle_comment"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+enter"
+        ],
+        "command": "expand_as_you_type",
+        "context": [
+            {
+                "operand": false,
+                "operator": "equal",
+                "match_all": true,
+                "key": "setting.is_widget"
+            },
+            {
+                "match_all": true,
+                "key": "emmet_action_enabled.expand_as_you_type"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+y"
+        ],
+        "args": {
+            "action": "evaluate_math_expression"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.evaluate_math_expression"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+0"
+        ],
+        "args": {
+            "action": "balance_inward"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.balance_inward"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+r"
+        ],
+        "args": {
+            "action": "reflect_css_value"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.reflect_css_value"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+."
+        ],
+        "args": {
+            "action": "select_next_item"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.select_next_item"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "alt+super+,"
+        ],
+        "args": {
+            "action": "balance_outward"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.balance_outward"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+,"
+        ],
+        "args": {
+            "action": "select_previous_item"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.select_previous_item"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+`"
+        ],
+        "args": {
+            "action": "split_join_tag"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.split_join_tag"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+g"
+        ],
+        "command": "wrap_as_you_type",
+        "context": [
+            {
+                "operand": false,
+                "operator": "equal",
+                "match_all": true,
+                "key": "setting.is_widget"
+            },
+            {
+                "match_all": true,
+                "key": "emmet_action_enabled.wrap_as_you_type"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+'"
+        ],
+        "command": "rename_tag",
+        "context": [
+            {
+                "key": "emmet_action_enabled.rename_tag"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "alt+super+'"
+        ],
+        "args": {
+            "action": "encode_decode_data_url"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.encode_decode_data_url"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+u"
+        ],
+        "command": "update_as_you_type",
+        "context": [
+            {
+                "operand": false,
+                "operator": "equal",
+                "match_all": true,
+                "key": "setting.is_widget"
+            },
+            {
+                "match_all": true,
+                "key": "emmet_action_enabled.update_as_you_type"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+alt+super+u"
+        ],
+        "args": {
+            "action": "update_image_size"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.update_image_size"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+j"
+        ],
+        "args": {
+            "action": "matching_pair"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.matching_pair"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+left"
+        ],
+        "args": {
+            "action": "prev_edit_point"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.prev_edit_point"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+right"
+        ],
+        "args": {
+            "action": "next_edit_point"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.next_edit_point"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "alt+super+="
+        ],
+        "args": {
+            "action": "increment_number_by_01"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.increment_number_by_01"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+="
+        ],
+        "args": {
+            "action": "increment_number_by_1"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.increment_number_by_1"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+alt+super+="
+        ],
+        "args": {
+            "action": "increment_number_by_10"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.increment_number_by_10"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+-"
+        ],
+        "args": {
+            "action": "decrement_number_by_1"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.decrement_number_by_1"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "alt+super+-"
+        ],
+        "args": {
+            "action": "decrement_number_by_01"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.decrement_number_by_01"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+alt+super+-"
+        ],
+        "args": {
+            "action": "decrement_number_by_10"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.decrement_number_by_10"
+            }
+        ]
+    },
+    {
+        "keys": [
+            "ctrl+super+e"
+        ],
+        "args": {
+            "action": "expand_abbreviation"
+        },
+        "command": "run_emmet_action",
+        "context": [
+            {
+                "key": "emmet_action_enabled.expand_abbreviation"
+            }
+        ]
+    },
 
 ]

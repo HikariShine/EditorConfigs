@@ -7,8 +7,8 @@ xcopy "%source%\Default" "%destination%\Default\" /s/q/y
 xcopy "%source%\Guangshan" "%destination%\Guangshan\" /s/q/y
 xcopy "%source%\User" "%destination%\User\" /s/q/y /exclude:Backup.ignore
 xcopy "%source%\Color Highlighter" "%destination%\Color Highlighter\" /s/q/y
-echo 备份sublimeCodeIntel的配置
-xcopy "%USERPROFILE%\.codeintel\config" "%destination%\.codeintel\" /s/q/y
+rem echo 备份sublimeCodeIntel的配置
+rem xcopy "%USERPROFILE%\.codeintel\config" "%destination%\.codeintel\" /s/q/y
 
 pause
 exit

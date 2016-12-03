@@ -17,13 +17,13 @@ xcopy "%source%\User" "%destination%\User\" /s/q/y
 
 xcopy "%source%\Color Highlighter" "%destination%\Color Highlighter\" /s/q/y
 
-echo 还原codeIntel的配置
-xcopy "%source%\.codeintel\config" "%USERPROFILE%\.codeintel\" /s/q/y
+rem echo 还原codeIntel的配置
+rem xcopy "%source%\.codeintel\config" "%USERPROFILE%\.codeintel\" /s/q/y
 
 pause
 
-echo 创建链接
-call Makelink.bat
+rem echo 创建链接
+rem call Makelink.bat
 
 
 exit
