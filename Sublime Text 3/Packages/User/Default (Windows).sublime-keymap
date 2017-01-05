@@ -108,6 +108,8 @@
 
 	{ "keys": ["alt+super+e"], "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"}},
 
+	// 模仿Intellij的快捷键
+	{ "keys": ["ctrl+shift+j"], "command": "join_lines" },
 
 	// 以下是插件快捷键，注意安装插件后再使用
 
