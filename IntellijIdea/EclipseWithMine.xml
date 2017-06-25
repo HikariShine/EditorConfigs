@@ -20,6 +20,10 @@
   <action id="ActivateTODOToolWindow">
     <keyboard-shortcut first-keystroke="ctrl 6" />
   </action>
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="alt f12" />
+    <keyboard-shortcut first-keystroke="shift ctrl x" />
+  </action>
   <action id="ActivateVersionControlToolWindow">
     <keyboard-shortcut first-keystroke="ctrl 9" />
   </action>
@@ -51,6 +55,10 @@
   </action>
   <action id="EditorScrollToCenter">
     <keyboard-shortcut first-keystroke="alt m" />
+  </action>
+  <action id="EditorToggleCase">
+    <keyboard-shortcut first-keystroke="shift ctrl u" />
+    <keyboard-shortcut first-keystroke="shift ctrl y" />
   </action>
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="ctrl f3" />
