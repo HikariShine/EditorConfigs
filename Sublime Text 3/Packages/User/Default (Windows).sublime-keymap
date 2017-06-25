@@ -108,8 +108,6 @@
 
 	{ "keys": ["alt+super+e"], "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"}},
 
-	// 模仿Intellij的快捷键
-	{ "keys": ["ctrl+shift+j"], "command": "join_lines" },
 
 	// 以下是插件快捷键，注意安装插件后再使用
 
@@ -153,14 +151,17 @@
 	// 原ctrl+l选择行功能，向右移动一位使用ctrl+;代替，原ctrl+;的功能已被alt+r使用
 	// 这样的好处是腾出了两个ctrl+字母的功能键
 	{ "keys": ["ctrl+\\"], "command": "move_to", "args": {"to": "brackets"} },
-	{ "keys": ["ctrl+;"], "command": "expand_selection", "args": {"to": "line"} },
-	{ "keys": ["alt+a"], "command": "expand_selection", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+shift+\\"], "command": "expand_selection", "args": {"to": "brackets"} },
+    { "keys": ["alt+a"], "command": "expand_selection", "args": {"to": "brackets"} },
+    { "keys": ["ctrl+;"], "command": "expand_selection", "args": {"to": "line"} },
 	{ "keys": ["ctrl+shift+a"], "command": "expand_selection", "args": {"to": "scope"} },
 	{ "keys": ["alt+shift+a"], "command": "expand_selection", "args": {"to": "indentation"} },
 	{ "keys": ["ctrl+alt+shift+a"], "command": "expand_selection", "args": {"to": "tag"} },
 
 	// ctrl+shift+l的功能映射的ctrl+shift+;，与ctrl+l保持一致
-	{ "keys": ["ctrl+shift+;"], "command": "split_selection_into_lines" },
+    { "keys": ["ctrl+shift+;"], "command": "split_selection_into_lines" },
+	// 与eclipse保持一致
+    { "keys": ["ctrl+shift+j"], "command": "join_lines" },
 
 	{ "keys": ["ctrl+m"], "command": "context_menu" },
 
