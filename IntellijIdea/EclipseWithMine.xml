@@ -83,6 +83,9 @@
   </action>
   <action id="HippieBackwardCompletion" />
   <action id="HippieCompletion" />
+  <action id="MethodHierarchy">
+    <keyboard-shortcut first-keystroke="shift alt h" />
+  </action>
   <action id="NewElementInMenuGroup">
     <keyboard-shortcut first-keystroke="ctrl n" />
   </action>
@@ -106,6 +109,9 @@
   <action id="ReopenClosedTab">
     <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
+  <action id="ReplaceInPath">
+    <keyboard-shortcut first-keystroke="shift ctrl h" />
+  </action>
   <action id="Resume">
     <keyboard-shortcut first-keystroke="f8" />
   </action>
@@ -121,7 +127,6 @@
     <keyboard-shortcut first-keystroke="shift ctrl alt k" />
   </action>
   <action id="ShowIntentionActions">
-    <keyboard-shortcut first-keystroke="shift alt j" />
     <keyboard-shortcut first-keystroke="alt back_quote" />
   </action>
   <action id="ShowListAction" />
@@ -155,6 +160,9 @@
   <action id="Switcher">
     <keyboard-shortcut first-keystroke="alt t" />
     <keyboard-shortcut first-keystroke="shift alt t" />
+  </action>
+  <action id="Vcs.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="shift ctrl back_quote" />
   </action>
   <action id="XDebugger.MuteBreakpoints">
     <keyboard-shortcut first-keystroke="ctrl alt b" />
