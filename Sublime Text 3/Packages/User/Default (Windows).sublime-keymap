@@ -14,7 +14,7 @@
 	{ "keys": ["alt+shift+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
 
     { "keys": ["ctrl+alt+shift+up"], "command": "scroll_to_bof" },
-	{ "keys": ["ctrl+alt+shift+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
+	{ "keys": ["ctrl+alt+shift+down"], "command": "scroll_to_eof" },
 
 	{ "keys": ["alt+shift+t"], "command": "transpose" },
 
