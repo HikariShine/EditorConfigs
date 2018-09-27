@@ -3,8 +3,8 @@
 	"color_scheme": "Packages/User/SublimeLinter/monokai-best (SL).tmTheme",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "微软雅黑Monaco",
-	"font_size": 12,
+	"font_face": "Yahei Consola 2017",
+	"font_size": 14,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
